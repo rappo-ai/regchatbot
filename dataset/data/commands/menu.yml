@@ -8,14 +8,11 @@ intents:
 
 nlu:
   - intent: menu
-    metadata:
-      keyword_intent: true
-      match_condition: "exact"
     examples: |
-      - /menu
+      - മെനു
 
 rules:
-  - rule: Command /menu
+  - rule: Command menu
     steps:
       - intent: menu
       - action: action_deactivate_loop

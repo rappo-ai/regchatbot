@@ -5,18 +5,18 @@ intents:
 
 nlu:
   - intent: start
-    metadata:
-      keyword_intent: true
-      match_condition: "exact"
     examples: |
-      - /start
+      - ആരംഭിക്കുക
+  - intent: order food
+    examples: |
+      - ഭക്ഷണം ഓർഡർ ചെയ്യുന്നു
 
 responses:
   utter_greet:
-    - text: Hello!
+    - text: ഹായ്! ഞാനൊരു ഫുഡ് ബോട്ട് ആണ് .
 
 rules:
-  - rule: Command /start
+  - rule: Command start
     steps:
       - intent: start
       - action: utter_greet

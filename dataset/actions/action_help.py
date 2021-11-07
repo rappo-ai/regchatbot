@@ -15,7 +15,7 @@ class ActionHelp(Action):
         domain: Dict[Text, Any],
     ) -> List[Dict[Text, Any]]:
 
-        text = "How can I help you?"
+        text = "ഞാന് നിങ്ങളെ എങ്ങനെ സഹായിക്കും ?"
         dispatcher.utter_message(text=text)
 
         return []

@@ -8,14 +8,12 @@ intents:
 
 nlu:
   - intent: help
-    metadata:
-      keyword_intent: true
-      match_condition: "exact"
     examples: |
-      - /help
+      - സഹായം
+      - സഹായം ആവശ്യമാണ്
 
 rules:
-  - rule: Command /help
+  - rule: Command help
     steps:
       - intent: help
       - action: action_deactivate_loop

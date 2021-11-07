@@ -5,8 +5,5 @@ intents:
 
 nlu:
   - intent: deny
-    metadata:
-      keyword_intent: true
-      match_condition: "exact"
     examples: |
-      - No
+      - അല്ല

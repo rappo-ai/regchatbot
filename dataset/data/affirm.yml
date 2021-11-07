@@ -5,8 +5,5 @@ intents:
 
 nlu:
   - intent: affirm
-    metadata:
-      keyword_intent: true
-      match_condition: "exact"
     examples: |
-      - Yes
+      - ശരി
