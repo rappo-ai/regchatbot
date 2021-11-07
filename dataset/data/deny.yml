@@ -7,3 +7,4 @@ nlu:
   - intent: deny
     examples: |
       - അല്ല
+      
