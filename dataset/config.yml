@@ -1,21 +1,23 @@
 language: "ml" # your two-letter language code
 
-
 pipeline:
-  - name: WhitespaceTokenizer
-  - name: RegexFeaturizer
-  - name: LexicalSyntacticFeaturizer
-  - name: CountVectorsFeaturizer
-  - name: CountVectorsFeaturizer
-    analyzer: "char_wb"
-    min_ngram: 1
-    max_ngram: 4
-  - name: DIETClassifier
-    epochs: 100
-  - name: EntitySynonymMapper
-  - name: ResponseSelector
-    epochs: 100
+- name: "WhitespaceTokenizer"
+- name: "RegexFeaturizer"
+- name: "CountVectorsFeaturizer"
+- name: "CountVectorsFeaturizer"
+  analyzer: "char_wb"
+  min_ngram: 1
+  max_ngram: 4
+- name: DIETClassifier
+  hidden_layers_sizes:
+    text: [256, 128]
+  number_of_transformer_layers: 0
+  weight_sparsity: 0
+  intent_classification: True
+  entity_recognition: False
+  use_masked_language_model: False
+  BILOU_flag: False
+  scale_loss: True
+  use_sparse_input_dropout: False
+  use_dense_input_dropout: False  
 policies:
-  - name: RulePolicy
-    restrict_rules: false
-

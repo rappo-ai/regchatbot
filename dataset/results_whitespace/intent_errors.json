@@ -1,0 +1,26 @@
+[
+  {
+    "text": "ഗുഡ് ബൈ",
+    "intent": "bye",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.45950937271118164
+    }
+  },
+  {
+    "text": "നമസ്കാരം",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "thank",
+      "confidence": 0.9855770468711853
+    }
+  },
+  {
+    "text": "വയറുവേദന",
+    "intent": "symptoms",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.3164297640323639
+    }
+  }
+]

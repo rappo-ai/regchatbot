@@ -1,0 +1,32 @@
+version: "2.0"
+nlu:
+- intent: bye
+  examples: |
+    - ഗുഡ് ബൈ
+- intent: centre_contact
+  examples: |
+    - ഹെൽത്ത് സെന്ററിന്റെ ഫോൺ നമ്പർ
+- intent: doctor_contact
+  examples: |
+    - ഡോക്ടറുടെ ഫോൺ നമ്പർ
+- intent: greet
+  examples: |
+    - നമസ്കാരം
+- intent: thank
+  examples: |
+    - നന്ദി
+- intent: help
+  examples: |
+    - സഹായം
+- intent: book_appointment
+  examples: |
+    - എനിക്ക് ഒരു അപ്പോയിന്റ് മെന്റ് എടുക്കാമോ ?
+- intent: doctor_timings
+  examples: |
+    - ഡോക്ടർ ഉണ്ടോ?
+- intent: symptoms
+  examples: |
+    - വയറുവേദന
+- intent: centre_timings
+  examples: |
+    - ഹെല്ത്ത് സെന്റര് എപ്പോഴാണ് അടയ്ക്കുന്നത് ?

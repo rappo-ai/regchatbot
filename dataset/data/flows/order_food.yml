@@ -1,0 +1,22 @@
+version: "2.0"
+
+intents:
+  - order_food
+
+nlu:
+  - intent: order_food
+    examples: |
+      - ഭക്ഷണം ഓർഡർ ചെയ്യണം
+
+responses:
+  utter_order_food:
+    - text: ഭക്ഷണം ഓർഡർ ചെയ്യാനുള്ള സേവനങ്ങൾ ഇപ്പോൾ ലഭ്യമല്ല.
+
+rules:
+  - rule: to order food
+    condition:
+      - slot_was_set:
+          - chat_type: private
+    steps:
+      - intent: order_food
+      - action: utter_order_food
