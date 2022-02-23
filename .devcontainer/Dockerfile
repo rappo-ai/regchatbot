@@ -9,6 +9,8 @@ RUN apt-get update && \
     ssh \
     git \
     nodejs && \
+    sudo chgrp -R root /opt/venv && \
+    sudo chmod -R g+w /opt/venv && \
     . /opt/venv/bin/activate && \
     npm i -g ngrok --unsafe-perm=true && \
     pip install black && \

@@ -1,0 +1,27 @@
+version: "2.0"
+
+actions:
+  - action_start
+  - action_main_menu
+
+intents:
+  - start
+
+nlu:
+  - intent: start
+    # metadata:
+    #   keyword_intent: true
+    #   match_condition: "start"
+    examples: |
+      - /തുടങ്ങുക
+      - /ആരംഭിക്കുക
+      - /തുടങ്ങ് 
+      - /ആരംഭം 
+
+rules:
+  - rule: Command start
+    steps:
+      - intent: start
+      - action: action_deactivate_loop
+      - action: action_start
+      - action: action_main_menu

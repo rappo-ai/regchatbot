@@ -1,0 +1,32 @@
+version: "2.0"
+
+actions:
+  - action_ask_question
+
+intents:
+  - ask_question
+
+nlu:
+  - intent: ask_question
+    # metadata:
+    #   keyword_intent: true
+    #   match_condition: "exact"
+    examples: |
+      - ചോദ്യങ്ങൾ ചോദിക്കണം
+      - ചോദ്യങ്ങളോ സംശയങ്ങളോ ചോദിക്കുക
+      - ചോദ്യങ്ങൾ ചോദികുക
+      - സംശയങ്ങൾ ചോദികുക
+      - സംശയങ്ങൾ ചോദിക്കണം
+      - എനിക്ക് ഒരു ചോദ്യം ചോദിക്കാനുണ്ട്
+      - എനിക്ക് ഒരു ചോദ്യം ചോദിക്കണം
+      - എനിക്ക് ഒരു സംശയം ചോദിക്കണം
+      - എനിക്ക് ഒരു സംശയം ചോദിക്കാനുണ്ട്
+
+rules:
+  - rule: to ask question
+    # condition:
+    #   - slot_was_set:
+    #       - chat_type: private
+    steps:
+      - intent: ask_question
+      - action: action_ask_question

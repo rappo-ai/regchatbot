@@ -1,64 +1,155 @@
-version: "2.0"
+# version: "2.0"
 
-intents:
-  - greet
-  - bye
-  - thank
-  - centre_timings
-  - symptoms
-  - doctor_timings
-  - book_appointment
-  - help
+# intents:
+#   - affirm
+#   - ask_question
+#   - book_appointment
+#   - bye
+#   - bot_commands
+#   - deny
+#   - disease
+#   - doctor
+#   - emergency
+#   - greet
+#   - health_centre_contact
+#   - health_centre_timings
+#   - help
+#   - menu
+#   - start
+#   - symptoms
+#   - thank
 
-nlu:
-  - intent: greet
-    examples: |
-      - ഹലോ
-      - ഹൈ
-  - intent: bye
-    examples: |
-      - ശരി എന്നാ
-  - intent: thank
-    examples: |
-      - നന്ദി നമസ്കാരം
-      - വളരെ നന്ദി
-  - intent: centre_timings
-    examples: |
-      - എപ്പോഴാണ് ഹെൽത്ത് കെയർ സെന്റർ തുറക്കുന്നത് ?
-      - ഹെൽത്ത് കെയർ സെന്റർ തുറന്നോ?
-      - സെന്റർ തുറന്നോ?
-      - ഹെൽത്ത് സെന്റർ തുറന്നോ?
-      - ഹെൽത്ത് സെന്റർ അടച്ചോ?
-      - എപ്പോഴാണ് സെന്റർ അടയ്ക്കുന്നത്?
-      - സെന്റർ അടച്ചോ?
-      - ഹെൽത്ത് സെന്ററിന്റെ സമയങ്ങൾ
-  - intent: symptoms
-    examples: |
-      - എനിക്ക് പനിയും ചുമയും ഉണ്ട്
-      - എനിക്ക് പനിയുണ്ട് 
-      - എനിക്ക് മൂക്കൊലിപ്പ് ഉണ്ട് 
-      - എനിക്ക് കൈവേദനയുണ്ട് 
-      - എനിക്ക് തൊണ്ടവേദനയുണ്ട്
-      - മാനസിക വിഷാദം
-  - intent: doctor_timings
-    examples: |
-      - അവിടെ ഡോക്ടർ ഉണ്ടോ ?
-      - ഡോക്ടർ അവിടെയുണ്ടോ ?
-      - ഡോക്ടർ ഇപ്പോൾ ഉണ്ടോ ?
-      - എനിക്ക് ഡോക്ടറെ കാണണം .
-      - ഡോക്ടറുടെ സമയം
-  - intent: book_appointment
-    examples: |
-      - എനിക്കൊരു അപ്പോയിന്റ് മെന്റ് എടുക്കണം .
-      - എനിക്കൊരു അപ്പോയിന്റ് മെന്റ് വേണം .
-      - ഒരു അപ്പോയിന്റ് മെന്റ് ബുക്ക് ചെയ്യുക
-  - intent: help
-    examples: |
-      - സഹായം ആവശ്യമാണ്
-      - എനിക്ക് സഹായം വേണം
-  - intent: centre_contact
-    examples: |
-      - എന്താണ് ഹെൽത്ത് സെന്റർ ഫോൺ നമ്പർ ?
-  - intent: doctor_contact
-    examples: |
-      - എന്താണ് ഡോക്ടറുടെ ഫോൺ നമ്പർ ?
+# nlu:
+#   - intent: affirm
+#     examples: |
+#       - ശരി
+#       - അതെ
+#       - അത് ശരിയാണ്
+#   - intent: ask_question
+#     metadata:
+#       keyword_intent: true
+#       match_condition: "exact"
+#     examples: |
+#       - ചോദ്യങ്ങളോ സംശയങ്ങളോ ചോദിക്കുക
+#   - intent: book_appointment
+#     metadata:
+#       keyword_intent: true
+#       match_condition: "exact"
+#     examples: |
+#       - അപ്പോയിന്റ്മെന്റ് ബുക്ക് ചെയ്യണം
+#   - intent: bot commands
+#     metadata:
+#       keyword_intent: true
+#       match_condition: "exact"
+#     examples: |
+#       - ബോട്ട് കമാൻഡുകൾ
+#   - intent: bye
+#     examples: |
+#       - പിന്നെ കാണാം
+#       - ശരി പിന്നെ കാണാം
+#       - ബൈ
+#   - intent: centre_contact
+#     examples: |
+#       - എന്താണ് ഹെൽത്ത് സെന്റർ ഫോൺ നമ്പർ ?
+#       - ആരോഗ്യ കേന്ദ്രത്തിന്റെ ഫോൺ നമ്പർ
+#       - എച്ച്സിയുടെ ഫോൺ നമ്പർ
+#       - എച്ച്സിയെ എങ്ങനെ ബന്ധപ്പെടാം?
+#       - എച്ച് സിയുടെ കോൺടാക്റ്റ് നമ്പർ എന്താണ്?
+#   - intent: centre_timings
+#     examples: |
+#       - എപ്പോഴാണ് ഹെൽത്ത് കെയർ സെന്റർ തുറക്കുന്നത് ?
+#       - ഹെൽത്ത് കെയർ സെന്റർ തുറന്നോ?
+#       - സെന്റർ തുറന്നോ?
+#       - ഹെൽത്ത് സെന്റർ തുറന്നോ?
+#       - ഹെൽത്ത് സെന്റർ അടച്ചോ?
+#       - എപ്പോഴാണ് സെന്റർ അടയ്ക്കുന്നത്?
+#       - സെന്റർ അടച്ചോ?
+#       - ഹെൽത്ത് സെന്ററിന്റെ സമയങ്ങൾ
+#       - ആരോഗ്യ കേന്ദ്രത്തിന്റെ സമയക്രമം
+#       - എനിക്ക് എച്ച് സിയിൽ 8 മണിക്ക് മുമ്പ് വരാമോ?
+#       - എനിക്ക് 12 മണിക്ക് ശേഷം എച്ച് സിയിലേക്ക് വരാമോ?
+#   - intent: deny
+#     examples: |
+#       - അല്ല
+#       - ഇല്ല
+#   - intent: disease
+#     examples: |
+#       - എനിക്ക് [കൊവിഡ്-19]നെ{"entity":"disease_name","value":"കൊറോണ"} കുറിച്ചുള്ള സംശയങ്ങൾ ചോദിക്കണം
+#       - [കൊറോണ]വൈറസിനെക്കുറിച്ച്{"entity":"disease_name","value":"കൊറോണ"} ചില സംശയങ്ങൾ ചോദിക്കാൻ ഞാൻ ആഗ്രഹിക്കുന്നു
+#       - [ഡെങ്കിപ്പനി]യെക്കുറിച്ച്{"entity":"disease_name","value":"ഡെങ്കിപ്പനി"} എനിക്ക് ചില സംശയങ്ങൾ ചോദിക്കാനുണ്ട്
+#       - [അതിസാര]ത്തെക്കുറിച്ച്{"entity":"disease_name","value":"അതിസാരം"} ചില സംശയങ്ങൾ ചോദിക്കാൻ ഞാൻ ആഗ്രഹിക്കുന്നു
+#       - [വയറിളക്ക]ത്തെക്കുറിച്ച്{"entity":"disease_name","value":"അതിസാരം"}  ചില സംശയങ്ങൾ ചോദിക്കുക
+#       - എനിക്ക് [മലേറിയ]യെക്കുറിച്ച്{"entity":"disease_name","value":"മലേറിയ"} ചില സംശയങ്ങൾ ചോദിക്കണം
+#       - [എയ്ഡ്‌സി]നെക്കുറിച്ച്{"entity":"disease_name","value":"എയ്ഡ്സ്"}  ചില സംശയങ്ങൾ ചോദിക്കാൻ ഞാൻ ആഗ്രഹിക്കുന്നു
+#       - [എച്ച്‌ഐവി]നെക്കുറിച്ച്{"entity":"disease_name","value":"എയ്ഡ്സ്"}  ചില സംശയങ്ങൾ ചോദിക്കാൻ ഞാൻ ആഗ്രഹിക്കുന്നു
+#       - എനിക്ക് [ടൈഫോയിഡി]നെക്കുറിച്ച്{"entity":"disease_name","value":"ടൈഫോയ്ഡ്"}  ചില സംശയങ്ങൾ ചോദിക്കണം
+#       - [വിഷാദരോഗ]ത്തെക്കുറിച്ച്{"entity":"disease_name","value":"വിഷാദരോഗം"}  എനിക്ക് ചില സംശയങ്ങൾ ചോദിക്കണം
+#       - [പ്രമേഹ]ത്തെക്കുറിച്ചുള്ള{"entity":"disease_name","value":"പ്രമേഹം"} ചില സംശയങ്ങൾ ചോദിക്കാൻ ഞാൻ ആഗ്രഹിക്കുന്നു
+#   - intent: doctor
+#     examples: |
+#       - അവിടെ ഡോക്ടർ ഉണ്ടോ ?
+#       - ഡോക്ടർ അവിടെയുണ്ടോ ?
+#       - ഡോക്ടർ ഇപ്പോൾ ഉണ്ടോ ?
+#       - എനിക്ക് ഡോക്ടറെ കാണണം .
+#       - ഡോക്ടറുടെ സമയം
+#   - intent: emergency
+#     metadata:
+#       keyword_intent: true
+#       match_condition: "exact"
+#     examples: |
+#       - അടിയന്തര സഹായ നമ്പറുകൾ
+#   - intent: greet
+#     examples: |
+#       - ഹലോ
+#       - ഹൈ
+#   - intent: help
+#     metadata:
+#       keyword_intent: true
+#       match_condition: "exact"
+#     examples: |
+#       - /സഹായം
+#   - intent: menu
+#     metadata:
+#       keyword_intent: true
+#       match_condition: "exact"
+#     examples: |
+#       - /മെനു
+#   - intent: start
+#     metadata:
+#       keyword_intent: true
+#       match_condition: "start"
+#     examples: |
+#       - /തുടങ്ങുക
+#   - intent: symptoms
+#     examples: |
+#       - എനിക്ക് [പനിയും]{"entity":"symptom","group":"1","value":"പനി"} [ചുമ]യും{"entity":"ലക്ഷണം","group":"2","value":"ചുമ"} ഉണ്ട്
+#       - എനിക്ക് [പനി]യുണ്ട്{"entity":"symptom","value":"പനി"}
+#       - എനിക്ക് [മൂക്കൊലിപ്പ്]{"entity":"symptom","value":"മൂക്കൊലിപ്പ്"} ഉണ്ട്
+#       - എനിക്ക് [കൈവേദന]യുണ്ട്{"entity":"symptom","value":"കൈവേദന"}
+#       - എനിക്ക് [തൊണ്ടവേദന]യുണ്ട്{"entity":"symptom","value":"തൊണ്ടവേദന"}
+#       - ഞാൻ [മാനസിക വിഷാദം]{"entity":"symptom","value":"മാനസിക വിഷാദം"} അനുഭവിക്കുന്നു
+#   - intent: thank
+#     examples: |
+#       - നന്ദി നമസ്കാരം
+#       - വളരെ നന്ദി
+
+# # 7 keyword intents, 17 intents, 10 normal
+# # https://meet.google0.com/xne-ckqn-qjb
+
+# nlu:
+#   - intent: faq/ask_rasa
+#     examples: |
+#       - What is rasa?
+#       - May I know what rasa is? 
+#   - intent: faq/ask_bot
+#     examples: |
+#       - What's a bot?
+#       - What is a chatbot?
+
+# responses:
+#   utter_faq/ask_rasa:
+#     - text: Rasa is a an open-source ML framework to build bots
+#   utter_faq/ask_bot:
+#     - text: Bot or chatbots are conversational agents.
+
+

@@ -1,9 +1,36 @@
 version: "2.0"
 
 actions:
-  - action_session_start
+  - action_ask_question
   - action_help
   - action_main_menu
+  - action_session_start
+  - action_start
+  - action_unable_to_answer
+
+entities:
+  - disease
+  - symptom
+  - essential
+
+intents:
+  - affirm
+  - ask_question
+  - book_appointment
+  - bye
+  - bot_commands
+  - deny
+  - diseases
+  - doctor
+  - emergency
+  - greet
+  - health_centre_contact
+  - health_centre_timings
+  - help
+  - menu
+  - start
+  - symptoms
+  - thank
 
 session_config:
   session_expiration_time: 60

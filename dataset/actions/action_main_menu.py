@@ -17,7 +17,10 @@ class ActionMainMenu(Action):
 
         text = "നിങ്ങൾ എന്ത് ചെയ്യുവാനാണ് ഇഷ്ടപ്പെടുന്നത്?"
         reply_markup = {
-            "keyboard": [["ഭക്ഷണം ഓർഡർ ചെയ്യുന്നു", "സഹായം ആവശ്യമാണ്"]],
+            "keyboard": [
+                ["അപ്പോയിന്റ്മെന്റ് ബുക്ക് ചെയ്യണം", "ചോദ്യങ്ങൾ ചോദിക്കണം"],
+                ["അടിയന്തര സഹായ നമ്പറുകൾ", "ബോട്ട് കമാൻഡുകൾ"],
+            ],
             "resize_keyboard": True,
         }
         json_message = {"text": text, "reply_markup": reply_markup}

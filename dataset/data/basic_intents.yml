@@ -1,0 +1,72 @@
+version: "2.0"
+
+actions:
+  - action_start
+  - action_main_menu
+
+intents:
+  - affirm
+  - bye
+  - deny
+  - greet
+  - thank
+
+nlu:
+  - intent: affirm
+    examples: |
+      - ശരി
+      - അതെ
+      - അത് ശരിയാണ്
+      - അത് ശരി ആണ്
+      - അത് വളരെ ശരി ആണ്
+  - intent: bye
+    examples: |
+      - ബൈ
+      - പിന്നെ കാണാം
+      - ബൈ ബൈ
+      - വിട
+  - intent: deny
+    examples: |
+      - അല്ല
+      - ഇല്ല
+  - intent: greet
+    examples: |
+      - ഹലോ
+      - ഹൈ
+      - സുപ്രഭാതം
+      - നമസ്കാരം
+  - intent: thank
+    examples: |
+      - നന്ദി നമസ്കാരം
+      - വളരെ നന്ദി 
+      - നന്ദി
+
+responses:
+  utter_bye:
+    - text: പിന്നെ കാണാം
+  utter_thank:
+    - text: പ്രശ്നമില്ല. അതെന്റെ കടമയാണ്.
+
+rules:
+  - rule: to greet
+    # condition:
+    #   - slot_was_set:
+    #       - chat_type: private
+    steps:
+      - intent: greet
+      - action: action_start
+      - action: action_main_menu
+  - rule: to reply bye
+    # condition:
+    #   - slot_was_set:
+    #       - chat_type: private
+    steps:
+      - intent: bye
+      - action: utter_bye
+  - rule: to thank
+    # condition:
+    #   - slot_was_set:
+    #       - chat_type: private
+    steps:
+      - intent: thank
+      - action: utter_thank

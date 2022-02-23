@@ -1,0 +1,29 @@
+version: "2.0"
+
+actions:
+  - action_main_menu
+
+intents:
+  - menu
+
+nlu:
+  - intent: menu
+    # metadata:
+    #   keyword_intent: true
+    #   match_condition: "exact"
+    examples: |
+      - /മെനു
+      - /മെനു പോകുക
+      - /മെനു പോകണം
+
+rules:
+  - rule: Command menu
+    steps:
+      - intent: menu
+      - action: action_deactivate_loop
+      - action: action_main_menu
+  - rule: NLU Fallback
+    steps:
+      - intent: nlu_fallback
+      - action: action_deactivate_loop
+      - action: action_main_menu

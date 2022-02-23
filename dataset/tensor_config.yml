@@ -1,28 +1,37 @@
 language: "ml" # your two-letter language code
 
 pipeline:
-  - name: "CustomTokenizer"
-  - name: "CRFEntityExtractor"
-  - name: "EntitySynonymMapper"
+  - name: "WhitespaceTokenizer"
   - name: "CountVectorsFeaturizer"
-    analyzer: "word"
-    stop_words: [ഏറെ,"ഇതേ","എന്ന","വേറെ","എല്ലാ","മതി","നിങ്ങളെ","വളരെ","എവിടെ","എപ്പോൾ","ഇന്ന്","ഉള്ള","തന്റെ","വരെ","മാത്രം","എന്നാൽ","മുമ്പ്", "തന്നെ","ഇതിൽ","ഇനി","എങ്കിൽ","അല്ലെങ്കിൽ","കുറിച്ച്","പിന്നെ",]
   - name: "CountVectorsFeaturizer"
     analyzer: "char_wb"
     min_ngram: 1
     max_ngram: 4
+  - name: LexicalSyntacticFeaturizer
+    features:
+      [
+        ["low", "title", "upper"],
+        [
+          "BOS",
+          "EOS",
+          "low",
+          "prefix5",
+          "prefix2",
+          "suffix5",
+          "suffix3",
+          "suffix2",
+          "upper",
+          "title",
+          "digit",
+        ],
+        ["low", "title", "upper"],
+      ]
   - name: DIETClassifier
-    hidden_layers_sizes:
-      text: [256, 128]
+    epochs: 50
     number_of_transformer_layers: 0
-    intent_classification: True
-    entity_recognition: False
-    BILOU_flag: False
-    scale_loss: True
-    use_sparse_input_dropout: False
-    use_dense_input_dropout: False
+  - name: EntitySynonymMapper
   - name: ResponseSelector
-    epochs: 100
+    epochs: 50
   - name: FallbackClassifier
     threshold: 0.3
     ambiguity_threshold: 0.1

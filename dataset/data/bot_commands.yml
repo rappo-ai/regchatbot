@@ -1,0 +1,30 @@
+version: "2.0"
+
+intents:
+  - bot_commands
+
+nlu:
+  - intent: bot_commands
+    # metadata:
+    #   keyword_intent: true
+    #   match_condition: "exact"
+    examples: |
+      - ബോട്ട് കമാൻഡുകൾ
+      - ബോട്ടിനുള്ള കമാൻഡുകൾ
+      - ബോട്ടിനുവേണ്ടിയുള്ള കമാൻഡുകൾ
+      - ബോട്ട് പ്രവർത്തികാനുള്ള കമാൻഡുകൾ
+
+responses:
+  utter_bot_commands:
+    - text: >
+        /മെനു - പ്രധാന മെനുവിലേക്ക് പോകാൻ ഈ കമാൻഡ് ടൈപ്പ് ചെയ്യുക
+        /സഹായം - അടിയന്തര നമ്പറുകൾ ഉപയോഗിച്ച് സഹായം നൽകാനോ ബോട്ട് കമാൻഡുകൾ അറിയാനോ ഈ കമാൻഡ് ടൈപ്പ് ചെയ്യുക
+
+rules:
+  - rule: to ask bot commands
+    # condition:
+    #   - slot_was_set:
+    #       - chat_type: private
+    steps:
+      - intent: bot_commands
+      - action: utter_bot_commands

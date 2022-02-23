@@ -360,7 +360,7 @@ class TelegramInput(InputChannel):
                         )
                         await on_new_message(
                             UserMessage(
-                                "/start",
+                                "/തുടങ്ങുക",
                                 out_channel,
                                 sender_id,
                                 input_channel=self.name(),
@@ -392,10 +392,7 @@ class TelegramInput(InputChannel):
         channel.set_webhook(
             url=self.webhook_url, drop_pending_updates=self.drop_pending_updates
         )
-        commands = [
-            BotCommand("menu", "Go to main menu"),
-            BotCommand("help", "Contact support"),
-        ]
+        commands = []
         channel.set_my_commands(commands)
 
         return channel

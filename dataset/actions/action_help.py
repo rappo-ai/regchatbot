@@ -16,6 +16,12 @@ class ActionHelp(Action):
     ) -> List[Dict[Text, Any]]:
 
         text = "ഞാന് നിങ്ങളെ എങ്ങനെ സഹായിക്കും ?"
-        dispatcher.utter_message(text=text)
+        reply_markup = {
+            "keyboard": [["അടിയന്തര സഹായ നമ്പറുകൾ", "ബോട്ട് കമാൻഡുകൾ"]],
+            "resize_keyboard": True,
+        }
+        json_message = {"text": text, "reply_markup": reply_markup}
+
+        dispatcher.utter_message(json_message=json_message)
 
         return []

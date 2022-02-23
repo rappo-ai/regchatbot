@@ -1,9 +1,0 @@
-version: "2.0"
-
-intents:
-  - affirm
-
-nlu:
-  - intent: affirm
-    examples: |
-      - ശരി
